@@ -1,0 +1,273 @@
+html { /* To avoid scrolling */
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    min-height: 100vh; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: 1 0 auto;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+
+#content{
+    min-height: 100vh; 
+}
+
+#root{
+    min-height: 100vh; 
+}
+header{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 58px;
+}
+#Review{
+    background: #606B9B;
+    margin-left: 0;
+    width: 150px;
+    height: 57px;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    margin-top: 47px;    
+    float:left;
+    
+}
+::-webkit-input-placeholder {
+        font-family: 'Raleway', sans-serif;
+}
+#review_txt{
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6vw;
+}
+#Lango{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    width:70%;
+    font-size: 6.5vw;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    color: #606B9B; 
+    margin-top: 39px;
+    
+}
+#saveContainer{
+    align-items: right;
+    justify-content: flex-end;
+    flex-direction: row;
+    display: flex;
+    padding-right: 195px;
+    padding-top: 60px;
+}
+#save{
+    background:  #70C7A9;
+    width:130px;
+    height: 40px;
+    border-radius: 10px;
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: lighter;
+}
+#footer{
+    background: #606B9B;
+    margin-bottom: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+
+}
+#username{
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+}
+#all{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+div.textCard {
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 160px;
+    width: 150px;
+    height: 90px;
+    margin: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* don't get weird blue border when I type */
+textarea:focus {
+    outline: none;    
+}
+textarea {
+    border: none;
+}
+
+/* Tablet mode: iPad */
+@media (min-device-width: 501px) and (max-device-width: 800px) {
+    header{
+        display: flex;
+        margin-bottom: 0;
+        padding-top: 10px;
+    }
+    #review_txt {
+        font-size: 2.3vw;
+    }
+    #Review {
+        width: 128px;
+        height: 68px;
+    }
+    #Lango {
+        font-size: 9.5vw;
+        padding-right: 130px;
+    }
+    #mainCreate {
+        padding: 35px;
+    }
+    div.textCard {
+        margin-right: 70px;
+        margin-left: 70px;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 140px;
+        padding-bottom: 140px;
+        margin: 10px;
+    }
+    #saveContainer {
+        padding-top: 50px;
+        padding-right: 6%;
+    }
+    #save {
+        width:140px;
+        height: 50px;
+        font-size: 3vw;
+    }
+    #footer{
+        padding-top: 10px;
+    }
+    
+}
+
+/* Tablet mode: iPad Pro */
+/*
+@media (min-device-width: 1024px) {
+    header{
+        display: flex;
+        margin-bottom: 0;
+        padding-top: 10px;
+    }
+    #review_txt  {
+        font-size: 2.5vw;
+    }
+    #Review {
+        width: 210px;
+        height: 70px;
+        padding-left: 8px;
+        padding-right: 10px;
+        margin-left: 13px;
+    }
+    #Lango {
+        font-size: 9.5vw;
+        padding-right: 140px;
+    }
+    div.textCard {
+        margin-right: 70px;
+        margin-left: 70px;
+        padding-left: 100px;
+        padding-right: 200px;
+        padding-top: 200px;
+        padding-bottom: 180px;
+        margin: 10px; 
+    }
+    #saveContainer {
+        padding-top: 50px;
+        padding-right: 70px;
+    }
+    #save {
+        width:150px;
+        height: 50px;
+        font-size: 3vw;
+    }
+    #footer{
+        padding-top: 10px;
+    }
+}
+*/
+
+/* Mobile mode: iPhone X, iPhone 6/7/8 */
+@media (max-device-width: 500px) {
+    header{
+        display: flex;
+        margin-bottom: 0;
+        margin-left: 26px;
+        padding-top: 0px;
+
+    }
+    #review_txt {
+        font-size: 3vw;
+    }
+    #Review {
+        width: 115px;
+        height: 40px;
+    }
+    #Lango {
+        font-size: 9.5vw;
+        padding-right: 90px;
+        padding-left: 24px;
+        padding-top: 11px;
+
+    }
+    
+    div.textCard {
+        margin-right: 40px;
+        margin-left: 40px;
+        padding-left: 65px;
+        padding-right: 65px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin: 10px;
+    }
+    #saveContainer {
+        padding-top: 20px;
+        padding-bottom: 0px;
+        padding-right: 11.7%;
+    }
+    #save {
+        width:90px;
+        height: 35px;
+        font-size: 3vw;
+    }
+    
+}
+

@@ -1,0 +1,265 @@
+#review{
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+#mainReview{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+#mainCreate{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: row;
+    flex: 1 0 auto;
+}
+#QCard{
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 0px;
+    width: 900px;
+    height: 250 px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;  
+}
+#ACard{
+      
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    padding: 0px;
+    width: 721px;
+    height: 70px;
+    margin: 25px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;  
+}
+/*----------Review---------*/
+.card-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+/*- Card container -*/
+.card-container {
+  position: relative;
+  z-index: 1;
+  margin: 32px auto;
+  max-width: 720px;
+  height: 380px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+#logo1 {
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+}
+#logo2 {
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+}
+
+img {
+    width: 4vw;
+}
+
+/*- Card body -*/
+.card-body {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: all .7s linear;
+}
+/*
+/*- Flipping the card -*/
+.card-body.is-flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card-body.is-flipped>.side-front {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in, visibility .75s linear;
+}
+
+/*- Card sides -*/
+.card-side {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 92%;
+  color: #212121;
+  background-color: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+    padding-bottom: 30px;
+
+}
+
+
+/*- Back side -*/
+.side-back {
+  z-index: 2;
+  padding: 0px;
+  text-align: center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+   padding-bottom: 30px;
+}
+
+.card-container.is-flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+
+}
+
+.card-continer.is-flipped >.side-front {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in, visibility .75s linear; 
+}
+
+input,
+textarea {
+  padding: 18px;
+  width: 100%;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #eee;
+  border-left: 0;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-bottom: 1px solid #0c81f6;
+}
+
+textarea {
+  max-height: 80px;
+  resize: vertical;
+}
+
+#nextContainer{
+    align-items: right;
+    justify-content: flex-end;
+    flex-direction: row;
+    display: flex;
+    padding-right: 25%;
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+#next{
+
+    background:  #70C7A9;
+    width:87px;
+    height: 35px;
+    border-radius: 10px;
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+/* mobile mode: iPhone X */
+@media (max-device-width: 500px) {
+    #mainCreate {
+        display: flex;
+        flex-direction: column;
+    }
+    #QCard {
+        width: 277px;
+        height: 238px;
+    }
+    #ACard {
+        width: 277px;
+        height: 60px;
+    }
+    #nextContainer {
+        padding-right: 12.8%;
+    }
+    #next {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+    .card-side {
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      color: #212121;
+      background-color: #fff;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+        padding-bottom: 0px;
+
+    }
+    
+}
+
+/* tablet mode: iPad */
+@media (min-device-width: 500px) and (max-device-width: 800px) {
+    #mainReview {
+        margin: 25px;
+        
+    }
+    #QCard {
+        margin: 20px;
+        width: 600px;
+        height: 300px;
+    }
+    #ACard {
+        width: 600px;
+        height: 70px;
+    }
+    #nextContainer {
+        padding-right: 10%;
+    }
+    #next {
+        padding-right: 2.5%;
+        padding-left: 2.5%;    }
+    .card-side {
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 92%;
+      color: #212121;
+      background-color: #fff;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+        padding-bottom: 25px;
+
+    }
+    
+}
+

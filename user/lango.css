@@ -1,0 +1,121 @@
+body {
+    font-family: Helvetica, sans-serif;
+    /* background-color: lightgreen; */
+}
+
+main{
+    /* display:flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding-top: 70px; 
+    /* background-color: aquamarine;*/
+}
+
+#save {
+    /* background-color: red; */
+    margin-left: 880px;
+    margin-top: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #70C7A9;
+    color: white;
+    cursor: pointer;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer {
+    background-color: rgb(92, 102, 146);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 23px;
+    font-weight: lighter;
+    color: white;
+    text-align: center; 
+}
+
+#topFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#topChildOne {
+    margin-left: 80px;
+}
+
+#topChildTwo {
+    font-weight: bold;
+    /* text-shadow: 0px 1px, 1px 0px, 1px 1px; */
+    color: rgb(92, 102, 146);
+    margin-left: 280px;
+    font-size: 52px;
+    font-family: 'Raleway', sans-serif; 
+}
+
+#review {
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(92, 102, 146);
+    color: white;
+    cursor: pointer;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#inputEng {
+    font-size: 17px;
+    text-align: center;
+}
+
+::placeholder {
+    opacity: 0.7;
+}
+
+#inputBox {
+    margin-right: 20px; 
+}
+
+#outputBox {
+    margin-left: 20px; 
+}
+
+#parentDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: lightseagreen; */
+}
+
+div.textCard {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+
+    width: 350px;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* don't get weird blue border when I type */
+textarea:focus {
+    outline: none;
+}
+
+
+
+textarea {
+    border: none;
+}
