@@ -188,12 +188,7 @@ app.get('/user/loadPage', loadPage );
 // app.use(fileNotFound);            // otherwise not found
 
 
-//  app.use(express.static('public'));  // can I find a static file? 
-// next, handler for url that starts login with Google.
-// The app (in public/login.html) redirects to here (not an AJAX request!)
-// Kicks off login process by telling Browser to redirect to
-// Google. The object { scope: ['profile'] } says to ask Google
-// for their user profile information.
+
 app.get('/auth/google',
 	passport.authenticate('google',{ scope: ['profile'] }) );
 // passport.authenticate sends off the 302 response
@@ -260,49 +255,12 @@ function isAuthenticated(req, res, next) {
     }
 }
 
-
-// function for end of server pipeline
-//function fileNotFound(req, res) {
-    //let url = req.url;
-   // res.type('text/plain');
-   // res.status(404);
-    //res.send('Cannot find '+url);
-  //  }
-
-// Some functions Passport calls, that we can use to specialize.
-// This is where we get to write our own code, not just boilerplate. 
-// The callback "done" at the end of each one resumes Passport's
-// internal process. 
-
-// function called during login, the second time passport.authenticate
-// is called (in /auth/redirect/),
-// once we actually have the profile data from Google. 
 function gotProfile(accessToken, refreshToken, profile, done) {
     console.log("Google profile --->>> ",profile);
     console.log("username --->>> ", profile.name.familyName);
     console.log("lastname --->>> ", profile.name.givenName);
     console.log("google id --->>> ", profile.id);
-/*
-    const checkUser = 'SELECT EXISTS(SELECT * FROM Users WHERE googleID = '+ profile.id +')';
-    console.log("checkUser --->>>", checkUser);
-
-    db.run(checkUser, function userCheckCallback(err){
-    
-        if(err){
-            console.log("Check error -> ", err);
-        } else {
-            console.log("Checked correctly");
-        }
-});*/
-/*
-    function userCheckCallback(err,value){
-        if(err){
-            console.log("Check error -> ", err);
-        } else {
-            console.log("Checked correctly");
-            console.log("value--->>> ", value);
-        }
-    }*/    	   
+  	   
     const checkUser = 'SELECT EXISTS (SELECT 1 FROM Users WHERE googleID = "'+ profile.id +'")';
     //const checkUser = 'SELECT 1 FROM Users WHERE googleID = '+ profile.id;
     db.get(checkUser, (err,row) => {
@@ -310,16 +268,6 @@ function gotProfile(accessToken, refreshToken, profile, done) {
         return console.error(err.message);    
     } 
     if(row) {
-       // console.log("row user exist --->>> ", row.[0]);
-       // let userData = {
-          //  googleID: profile.id,
-        //    username: profile.name.givenName
-        //}       
-       // console.log("User is already in the table");
-       // done(null, userData); 
-    //} else {     
-        //console.log("row new user--->>> ", row);
-        //console.log("NOT in the table - create new use!");
         const insertUser = 'INSERT OR IGNORE INTO Users (`googleID`,`username`, `lastname`) VALUES (@0, @1, @2)';
         db.run(insertUser, profile.id, profile.name.familyName, profile.name.givenName, userInsertCallback);
         function userInsertCallback(err){
@@ -344,36 +292,6 @@ function gotProfile(accessToken, refreshToken, profile, done) {
         
     }
     });
-
-    /*const insertUser = 'INSERT OR IGNORE INTO Users (`googleID`,`username`, `lastname`) VALUES (@0, @1, @2)';
-    db.run(insertUser, profile.id, profile.name.familyName, profile.name.givenName, userInsertCallback);
-    function userInsertCallback(err){
-        if(err){
-            console.log("Insert error -> ", err);
-        } else {
-            console.log("Inserted correctly");
-        }    	   
-    }*/
-
-
-    // here is a good place to check if user is in DB,
-    // and to store him in DB if not already there. 
-    // Second arg to "done" will be passed into serializeUser,
-    // should be key to get user out of database.
-
-
-  /*  let userData = {
-        googleID: profile.id,
-        username: profile.name.givenName
-    }*/
-
-
-    // temporary! Should be the real unique
-    // key for db Row for this user in DB table.
-    // Note: cannot be zero, has to be something that evaluates to
-    // True.  
-
-    /*done(null, userData);*/ 
 }
 
 // Part of Server's sesssion set-up.  
