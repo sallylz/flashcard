@@ -1,0 +1,171 @@
+html{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#leftDiv{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, #606B9B,#B191D4);    
+    align-items: center;
+    box-shadow: 5px 0px 100px 3px grey;
+    flex: 50%; 
+
+}
+
+#rightDiv{
+    display: flex;
+    align-items: center;
+    flex: 50%;
+    justify-content: center;
+}
+
+#a {
+    padding-left: 80px;
+}
+#welcome{
+     font-family: 'Raleway', sans-serif;
+     font-size: 5.5vw;
+     color: white;
+     margin-bottom: 20px;
+}
+#customize{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.7vw;
+    color: rgb(116, 196, 169);
+    font-weight: lighter;
+}
+img{
+    width: 4vw;
+    padding-top: 9px;
+    padding-bottom: 8px;
+}
+#buttom{
+    display: flex;
+    flex-direction: row;
+    background-color: #70C7A9;
+    padding-left: 8px;
+    align-items: center;
+    cursor: pointer;
+    
+
+}
+#login{
+    align-items: center;
+    font-family: helvetica;
+    font-size: 1.35vw;
+    color: white;
+    background-color: #70C7A9;
+    padding-left: 12px;
+    padding-right: 27px;
+    font-weight: 500;
+}
+
+/* Tablet mode: iPad */
+
+@media (max-device-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #a {
+        padding-right: 90px;
+        padding-left: 125px;
+    }
+    #leftDiv {
+        display: flex;
+        flex: 75%;
+    }
+    #rightDiv {
+        display: flex;
+        flex: 25%;
+    }
+    #welcome {
+        font-size: 10vw;
+    }
+    #customize {
+        font-size: 5vw;
+    }
+    #login {
+        font-size: 3vw;
+    }
+    img {
+        width: 11vw;
+    }
+}
+
+/* Tablet mode: iPad Pro */
+@media (min-device-width: 501px) and (max-device-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #leftDiv {
+        display: flex;
+        flex: 75%;
+    }
+    #rightDiv {
+        display: flex;
+        flex: 25%;
+    }
+    #a {
+        padding-right: 90px;
+        padding-left: 170px;
+    }
+    #welcome {
+        font-size: 10vw;
+    }
+    #customize {
+        font-size: 4vw;
+    }
+    #login {
+        font-size: 3vw;
+    }
+    img {
+        width: 8vw;
+        padding-top: 13px;
+        padding-left: 6px;
+    }
+}
+
+/* Mobile mode: iPhone X, iPhone 6/7/8 and Plus, Pixel 2 XL, Pixel 2 */
+@media (max-device-width: 500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #leftDiv {
+        display: flex;
+        flex: 75%;
+    }
+    #rightDiv {
+        display: flex;
+        flex: 25%;
+    }
+    #a {
+        padding-right: 70px;
+        padding-left: 60px;
+    }
+    #welcome {
+        font-size: 9vw;
+    }
+    #customize {
+        font-size: 4.8vw;
+    }
+    #login {
+        font-size: 5.3vw;
+    }
+    img {
+        width: 12vw;
+        padding-top: 11px;
+        padding-left: 4px;
+    }
+}
